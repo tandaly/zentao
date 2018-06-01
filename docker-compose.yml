@@ -1,8 +1,12 @@
-docker-compose.yml:
+version: "2"
 services:
   zentao:
-    image: hofmann/zentao
+    image: registry.cn-hangzhou.aliyuncs.com/tandaly/zentao
+    container_name: zentao
+    privileged: true
     restart: always
+    ports:
+      - "888:80"
     networks:
       frontend_zentao:
       backend_zentao:
